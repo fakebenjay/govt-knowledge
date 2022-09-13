@@ -57,7 +57,7 @@ d3.csv("data-2.csv")
       .append("rect")
       .attr("x", marginLeft)
       .attr("y", function(d) {
-        return yScale2(d.freedomLong)
+        return yScale2(d.freedomLong) + yScale2.bandwidth() * (3 / 4)
       })
       .attr("width", function(d) {
         return xScale2(d['2017']);
@@ -74,7 +74,7 @@ d3.csv("data-2.csv")
       .append("rect")
       .attr("x", marginLeft)
       .attr("y", function(d) {
-        return yScale2(d.freedomLong) + yScale2.bandwidth() / 4
+        return yScale2(d.freedomLong) + yScale2.bandwidth() / 2
       })
       .attr("width", function(d) {
         return xScale2(d['2020']);
@@ -91,7 +91,7 @@ d3.csv("data-2.csv")
       .append("rect")
       .attr("x", marginLeft)
       .attr("y", function(d) {
-        return yScale2(d.freedomLong) + yScale2.bandwidth() / 2
+        return yScale2(d.freedomLong) + yScale2.bandwidth() / 4
       })
       .attr("width", function(d) {
         return xScale2(d['2021']);
@@ -108,7 +108,7 @@ d3.csv("data-2.csv")
       .append("rect")
       .attr("x", marginLeft)
       .attr("y", function(d) {
-        return yScale2(d.freedomLong) + yScale2.bandwidth() * (3 / 4)
+        return yScale2(d.freedomLong)
       })
       .attr("width", function(d) {
         return xScale2(d['2022']);
@@ -126,7 +126,7 @@ d3.csv("data-2.csv")
       .append("text")
       .attr("x", d => marginLeft + xScale2(d['2017']) + 3)
       .attr("y", function(d) {
-        return yScale2(d.freedomLong) + ((yScale2.bandwidth() / 4)) - 5
+        return yScale2(d.freedomLong) + (yScale2.bandwidth() * (3 / 4)) + ((yScale2.bandwidth() / 4)) - 5
       })
       .text(d => d['2017'] + '%')
       .attr('class', (d) => {
@@ -141,7 +141,7 @@ d3.csv("data-2.csv")
       .append("text")
       .attr("x", d => marginLeft + xScale2(d['2020']) + 3)
       .attr("y", function(d) {
-        return yScale2(d.freedomLong) + (yScale2.bandwidth() / 4) + ((yScale2.bandwidth() / 4)) - 5
+        return yScale2(d.freedomLong) + (yScale2.bandwidth() / 2) + ((yScale2.bandwidth() / 4)) - 5
       })
       .text(d => d['2020'] + '%')
       .attr('class', (d) => {
@@ -156,7 +156,7 @@ d3.csv("data-2.csv")
       .append("text")
       .attr("x", d => marginLeft + xScale2(d['2021']) + 3)
       .attr("y", function(d) {
-        return yScale2(d.freedomLong) + (yScale2.bandwidth() / 2) + ((yScale2.bandwidth() / 4)) - 5
+        return yScale2(d.freedomLong) + (yScale2.bandwidth() / 4) + ((yScale2.bandwidth() / 4)) - 5
       })
       .text(d => d['2021'] + '%')
       .attr('class', (d) => {
@@ -171,7 +171,7 @@ d3.csv("data-2.csv")
       .append("text")
       .attr("x", d => marginLeft + xScale2(d['2022']) + 3)
       .attr("y", function(d) {
-        return yScale2(d.freedomLong) + (yScale2.bandwidth() * (3 / 4)) + ((yScale2.bandwidth() / 4)) - 5
+        return yScale2(d.freedomLong) + ((yScale2.bandwidth() / 4)) - 5
       })
       .text(d => d['2022'] + '%')
       .attr('class', (d) => {
